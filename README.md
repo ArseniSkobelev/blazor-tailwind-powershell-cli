@@ -48,4 +48,6 @@ bash create-alias.sh
 <br />
 
 
-```blazortailwind PROJECT_NAME_HERE isHOSTED?`_HERE[0/1]```
+```
+blazortailwind PROJECT_NAME_HERE isHOSTED?`_HERE[0/1]
+```
