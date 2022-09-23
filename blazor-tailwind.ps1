@@ -1,6 +1,6 @@
-$newdirpath = (Get-Location).Path
 $projectname = $args[0]
 $ishostedparam = $args[1]
+$newdirpath = (Get-Location).Path
 
 if (!$args) { Write-Host "Usage: main.ps1 `"PROJECT_NAME`" `"IS_HOSTED? [0/1]`"" -ForegroundColor Yellow }
 
@@ -19,13 +19,8 @@ try {
 
         & npx tailwindcss init
     
-        $tailwindconfig = "module.exports = {
-            content: [`"./src/**/*.{razor,html,cshtml}`"],
-            theme: {
-            extend: {},
-            },
-            plugins: [],
-        }"
+        $tailwindconfig = "module.exports = {content: {'files': ['./{Components,Layouts,Pages,wwwroot}/**/*.{razor,html,svg}', './wwwroot/content/**/*.md']}, plugins: [require('tailwind-scrollbar'),],}"
+	
     
         $tailwindconfig > "./tailwind.config.js"
     
@@ -56,12 +51,6 @@ try {
     
         <body>
             <div id=`"app`">Loading...</div>
-    
-            <div id=`"blazor-error-ui`">
-                An unhandled error has occurred.
-                <a href=`"`" class=`"reload`">Reload</a>
-                <a class=`"dismiss`">🗙</a>
-            </div>
             <script src=`"_framework/blazor.webassembly.js`"></script>
         </body>
     
