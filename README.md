@@ -7,14 +7,18 @@
 
 
 1. Clone the repo
-> git clone https://github.com/ArseniSkobelev/blazor-tailwind-powershell-cli.git && cd blazor-tailwind-powershell-cli
+```
+git clone https://github.com/ArseniSkobelev/blazor-tailwind-powershell-cli.git && cd blazor-tailwind-powershell-cli
+```
 
 
 <br />
 
 
 2. Run the bash script
-> bash create-alias.sh
+```
+bash create-alias.sh
+```
 
 
 <br />
@@ -44,4 +48,4 @@
 <br />
 
 
-> blazortailwind PROJECT_NAME_HERE isHOSTED?`_HERE[0/1]
+```blazortailwind PROJECT_NAME_HERE isHOSTED?`_HERE[0/1]```
