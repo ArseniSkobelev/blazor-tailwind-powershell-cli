@@ -19,7 +19,7 @@ try {
 
         & npx tailwindcss init
     
-        $tailwindconfig = "module.exports = {content: {'files': ['./{Components,Layouts,Pages,wwwroot}/**/*.{razor,html,svg}', './wwwroot/content/**/*.md']}, plugins: [require('tailwind-scrollbar'),],}"
+        $tailwindconfig = "module.exports = {content: [`"**/*.razor", "**/*.cshtml", "**/*.html`"], theme: {extend: {},}, plugins: [require('tailwind-scrollbar'),],}"
 	
     
         $tailwindconfig > "./tailwind.config.js"
@@ -69,7 +69,7 @@ try {
     
         <div class=`"page`">
             <main>
-                <article class=`"content px-4`">
+                <article class=`"`">
                     @Body
                 </article>
             </main>
@@ -108,11 +108,11 @@ try {
         Set-Location $projectname
         
         Set-Location "./Client"
-    
+		    
         & npx tailwindcss init
     
         $tailwindconfig = "module.exports = {
-            content: [`"./src/**/*.{razor,html,cshtml}`"],
+            content: [`"**/*.razor", "**/*.cshtml", "**/*.html`"],
             theme: {
             extend: {},
             },
@@ -148,18 +148,13 @@ try {
     
         <body>
             <div id=`"app`">Loading...</div>
-    
-            <div id=`"blazor-error-ui`">
-                An unhandled error has occurred.
-                <a href=`"`" class=`"reload`">Reload</a>
-                <a class=`"dismiss`">🗙</a>
-            </div>
             <script src=`"_framework/blazor.webassembly.js`"></script>
         </body>
     
         </html>
         "
-    
+   		$indexhtml > "./wwwroot/index.html"
+ 
         Remove-Item "./Shared/NavMenu.razor"
         Remove-Item "./Shared/NavMenu.razor.css"
         Remove-Item "./Shared/SurveyPrompt.razor"
@@ -168,7 +163,7 @@ try {
     
         <div class=`"page`">
             <main>
-                <article class=`"content px-4`">
+                <article class=`"`">
                     @Body
                 </article>
             </main>
