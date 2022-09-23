@@ -159,6 +159,7 @@ try {
     
         </html>
         "
+	$indexhtml > "./wwwroot/index.html"
     
         Remove-Item "./Shared/NavMenu.razor"
         Remove-Item "./Shared/NavMenu.razor.css"
